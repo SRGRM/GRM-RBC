@@ -1,0 +1,10 @@
+# Core dependencies (everything except PyTorch).
+# Install PyTorch with one of requirements-cuda122.txt, requirements-cuda114.txt
+# or requirements-cpu.txt, which include this file.
+reconchess>=1.6
+chess>=1.9
+numpy
+tqdm
+requests
+click
+pytest

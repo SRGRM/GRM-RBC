@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# training and game outputs
+runs/
+game_logs/
+*.log
+local_game_history.json
+
+# StrangeFish2 optional caches
+w_cache.pk
+b_cache.pk
+opening_books/
+engines/
+uccchess_local_game.json
+uccchess_connect_*.log

@@ -1,0 +1,26 @@
+# Conda environment for machines with CUDA 11.4 drivers and an older PyTorch.
+# Used with scripts/train_estimator_cuda114.py and everything else in the repository.
+#
+#   conda env create -f environment-cuda114.yml
+#   conda activate grm-rbc-cu114
+#
+# PyTorch 1.9.1 built for CUDA 11.1 runs on CUDA 11.4 drivers. On this release
+# torch.cuda.amp.autocast has no dtype argument, which is why the CUDA 11.4
+# training script uses the dtype-free form. NumPy is kept below 2.0 because
+# PyTorch 1.x is not compatible with NumPy 2.
+name: grm-rbc-cu114
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pip
+  - numpy<1.24
+  - tqdm
+  - requests
+  - click
+  - pytest
+  - pip:
+      - --find-links https://download.pytorch.org/whl/torch_stable.html
+      - torch==1.9.1+cu111
+      - reconchess>=1.6
+      - chess>=1.9

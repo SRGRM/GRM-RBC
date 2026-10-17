@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grm-rbc"
+version = "1.0.0"
+description = "Generative Reward Machines for Reconnaissance Blind Chess: training pipeline and the uccchess bot"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT (grm_rbc, uccchess, scripts, tests); BSD-3-Clause (strangefish)" }
+authors = [{ name = "Saeid Rezaei" }]
+keywords = ["reconnaissance blind chess", "reinforcement learning", "reward machines", "imperfect information"]
+dependencies = [
+    "reconchess>=1.6",
+    "chess>=1.9",
+    "numpy",
+    "tqdm",
+    "requests",
+    "click",
+    "torch>=1.8",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.urls]
+"Tournament paper" = "https://proceedings.mlr.press/v220/gardner23a.html"
+"StrangeFish2" = "https://github.com/ginoperrotta/reconchess-strangefish2"
+
+[tool.setuptools]
+packages = ["grm_rbc", "uccchess", "strangefish", "strangefish.utilities"]
+
+[tool.setuptools.package-data]
+uccchess = ["tournament_config.json", "models/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

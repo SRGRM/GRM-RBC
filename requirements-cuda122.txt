@@ -1,0 +1,5 @@
+# pip install -r requirements-cuda122.txt
+# PyTorch 2.x built for CUDA 12.1 (runs on CUDA 12.x drivers, including 12.2).
+--extra-index-url https://download.pytorch.org/whl/cu121
+-r requirements.txt
+torch>=2.1

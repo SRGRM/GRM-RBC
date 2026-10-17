@@ -1,0 +1,7 @@
+# pip install -r requirements-cuda114.txt     (Python 3.8 or 3.9)
+# PyTorch 1.9.1 built for CUDA 11.1 (runs on CUDA 11.4 drivers).
+# If the machine already has a working older PyTorch, install only requirements.txt.
+--find-links https://download.pytorch.org/whl/torch_stable.html
+-r requirements.txt
+torch==1.9.1+cu111
+numpy<1.24

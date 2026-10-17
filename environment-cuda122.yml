@@ -1,0 +1,25 @@
+# Conda environment for machines with CUDA 12.x drivers (PyTorch 2.x).
+# Used with scripts/train_estimator_cuda122.py and everything else in the repository.
+#
+#   conda env create -f environment-cuda122.yml
+#   conda activate grm-rbc-cu122
+#
+# The CUDA 12.1 PyTorch build runs on any driver that supports CUDA 12.x (including 12.2).
+name: grm-rbc-cu122
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - tqdm
+  - requests
+  - click
+  - pytest
+  - pytorch>=2.1
+  - pytorch-cuda=12.1
+  - pip:
+      - reconchess>=1.6
+      - chess>=1.9

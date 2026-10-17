@@ -1,0 +1,24 @@
+# Conda environment without GPU support.
+# Enough for generating traces, training the GRM policy, evaluation and playing:
+# those stages are dominated by Stockfish on the CPU. The estimator also trains
+# on a CPU, only more slowly.
+#
+#   conda env create -f environment-cpu.yml
+#   conda activate grm-rbc-cpu
+name: grm-rbc-cpu
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - tqdm
+  - requests
+  - click
+  - pytest
+  - pytorch>=2.1
+  - cpuonly
+  - pip:
+      - reconchess>=1.6
+      - chess>=1.9
